@@ -10,6 +10,7 @@ import re
 def initialize_chatbot():
     #print("initializing chatbot... \n")
     #print("Loading dictionary...")
+    os.system("wget https://github.com/Varun221/chatbot_heroku/releases/download/Baseline/vocab_dict.p")
     with open('vocab_dict.p', 'rb') as fp:
         vocab = pickle.load(fp)
     #print(f"Loaded {len(vocab)} words")
@@ -32,6 +33,7 @@ def initialize_chatbot():
     assert sample_hidden.shape == (128,500)
 
     #print("Loading up encoder...")
+    os.system("wget https://github.com/Varun221/chatbot_heroku/releases/download/Baseline/encoder_gpu.h5")
     encoder.load_weights("encoder_gpu.h5")
 
     """ DECODER WORK """
@@ -46,6 +48,7 @@ def initialize_chatbot():
     assert sample_decoder_output.shape == (128, len(vocab))
 
     #print("Loading up decoder...")
+    os.system("wget https://github.com/Varun221/chatbot_heroku/releases/download/Baseline/decoder_gpu.h5")
     decoder.load_weights("decoder_gpu.h5")
 
     # inverse vocabulary
