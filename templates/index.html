@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        .box {
+            font-size: 20px;
+        }
+        .bigtext{
+            height: 50px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <h1>CHAT WITH THE BOT</h1>
+
+        <br><br>
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('reply') }}" method="post"> 
+            Your input: 
+            <input type="text" name="Input" required="required" size="80" class="bigtext"/>
+            <button type="submit" class="bigtext">Give my Input </button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <h4 class="bigtext"> {{bot_reply}} </h5>
+
+</body>
+</html>
