@@ -42,7 +42,7 @@ def initialize_chatbot():
     #print("Initializing Decoder...")
     decoder = Decoder(len(vocab), 100, 500,
                         128,  sample_emb,
-                        num_layers=3,
+                        num_layers=3, 
                         drop_prob = 0.1)
     #print("Testing Decoder...")
     sample_decoder_output, _, _ = decoder(tf.random.uniform((128, 1)),
