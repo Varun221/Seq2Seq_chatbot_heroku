@@ -7,7 +7,14 @@ I used pretrained Glove Embeddings for generating embeddings from the text befor
 
 ### Running on Local machine
 To run the model on local machine
-1. Open up a virtual environment ([what is that?](https://docs.python.org/3/library/venv.html)) and download all the packages in `requirements.txt` 
+1. Open up a virtual environment ([what is that?](https://docs.python.org/3/library/venv.html)) and download all the packages in `requirements.txt` \ 
+   There might be some problems in installing tensorflow so, please install it manually using this 
+
+    ` pip install --upgrade pip` 
+  
+    `pip install --upgrade tensorflow `
+  
+    If there is still a problem, refer [this](https://www.tensorflow.org/install/pip#virtual-environment-install)
 2. Next, get the `model_data` folder [here](https://drive.google.com/file/d/1lkW6rCH03wmr1dbIDxb-YV2-y9PpZC8g/view?usp=sharing) and put it in the same directory as `app.py` 
 3. Now From the root directory i.e. The directory containing `app.py` run `python app.py`. \
 This should start a local host server in your machine and you can open it up in the browser of your choice.
