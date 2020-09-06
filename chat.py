@@ -10,9 +10,8 @@ import re
 def initialize_chatbot():
     #print("initializing chatbot... \n")
     #print("Loading dictionary...")
-    if not os.path.isfile('vocab_dict.p'):
-        os.system("wget https://github.com/Varun221/chatbot_heroku/releases/download/Baseline/vocab_dict.p")
-    with open('vocab_dict.p', 'rb') as fp:
+    
+    with open('model_data/vocab_dict.p', 'rb') as fp: # put in the path to vocab_dict
         vocab = pickle.load(fp)
     #print(f"Loaded {len(vocab)} words")
 
@@ -34,9 +33,7 @@ def initialize_chatbot():
     assert sample_hidden.shape == (128,500)
 
     #print("Loading up encoder...")
-    if not os.path.isfile("encoder_gpu.h5"):
-        os.system("wget https://github.com/Varun221/chatbot_heroku/releases/download/Baseline/encoder_gpu.h5")
-    encoder.load_weights("encoder_gpu.h5")
+    encoder.load_weights("model_data/encoder_gpu.h5") # put in the path to decoder weights
 
     """ DECODER WORK """
     #print("Initializing Decoder...")
@@ -50,9 +47,7 @@ def initialize_chatbot():
     assert sample_decoder_output.shape == (128, len(vocab))
 
     #print("Loading up decoder...")
-    if not os.path.isfile("decoder_gpu.h5"):
-        os.system("wget https://github.com/Varun221/chatbot_heroku/releases/download/Baseline/decoder_gpu.h5")
-    decoder.load_weights("decoder_gpu.h5")
+    decoder.load_weights("model_data/decoder_gpu.h5") # put in the path to decoder weights
 
     # inverse vocabulary
     inv_vocab = {v:k for k,v in vocab.items()}
