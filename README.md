@@ -6,7 +6,7 @@ The Model comprises of 3 Encoder and 3 Decoder Layers connected by Bahdanau Atte
 I used pretrained Glove Embeddings for generating embeddings from the text before feeding it to model.
 
 ### Link
-The deployed Chatbot can be found at [chat_link](https://my-chatbot-varvish.herokuapp.com/)
+The deployed Chatbot can be found at [_chat_link_](https://my-chatbot-varvish.herokuapp.com/)
 Please give it some time to load, if it takes some time.
 
 ### Suggestions
